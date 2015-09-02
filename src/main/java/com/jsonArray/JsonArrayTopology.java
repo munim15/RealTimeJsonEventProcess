@@ -1,4 +1,4 @@
-package com.hortonworks.tutorials.JsonArray;
+package com.jsonArray;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;

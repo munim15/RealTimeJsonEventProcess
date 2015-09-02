@@ -10,13 +10,15 @@ import storm.kafka.SpoutConfig;
 import storm.kafka.ZkHosts;
 
 import backtype.storm.topology.base.BaseBasicBolt;
+import backtype.storm.topology.base.BasicOutputCollector;
+import backtype.storm.topology.base.OutputFieldsDeclarer;
+import backtype.storm.tuple.Tuple;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import backtype.storm.scheme.StringScheme;
 import org.apache.log4j.Logger;
 
 
