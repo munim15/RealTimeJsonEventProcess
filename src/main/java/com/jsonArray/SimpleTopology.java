@@ -44,7 +44,7 @@ public class SimpleTopology
     }
 
     private static final String KAFKA_SPOUT_ID = "kafkaSpout"; 
-    private static final String LOG_PRINTER_BOLT_ID = "PrinterBolt";
+    private static final String LOG_BOLT_ID = "ProcessorBolt";
 
     protected Properties topologyConfig;
 
@@ -91,8 +91,8 @@ public class SimpleTopology
     
     public void configurePrinterBolt(TopologyBuilder builder)
     {
-        PrinterBolt bolt = new PrinterBolt();
-        builder.setBolt(LOG_PRINTER_BOLT_ID, bolt).globalGrouping(KAFKA_SPOUT_ID);
+        ProcessBolt bolt = new ProcessBolt();
+        builder.setBolt(LOG_BOLT_ID, bolt).globalGrouping(KAFKA_SPOUT_ID);
     }
     
     private void buildAndSubmit() throws Exception
@@ -104,13 +104,13 @@ public class SimpleTopology
         Config conf = new Config();
         conf.setDebug(true);
         
-        StormSubmitter.submitTopology("simple-string-processor", 
+        StormSubmitter.submitTopology("json-processor", 
                                     conf, builder.createTopology());
     }
 
     public static void main(String[] str) throws Exception
     {
-        String configFileLocation = "simple_string_topology.properties";
+        String configFileLocation = "simple_topology.properties";
         SimpleTopology topo
                 = new SimpleTopology(configFileLocation);
         topo.buildAndSubmit();

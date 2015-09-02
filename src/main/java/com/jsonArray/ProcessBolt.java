@@ -42,8 +42,9 @@ public class ProcessBolt extends BaseRichBolt
     {
     	try {
 	    	String resource = "request.countries";
-	        String json = input.getStringByField("json");
-	        ArrayList<String> result = new ArrayList<String>();
+        //String json = input.getStringByField("json");
+        String json = (String) input.getValue(0);
+        ArrayList<String> result = new ArrayList<String>();
 	    	JSONObject obj = new JSONObject(json);
 	    	String[] names = resource.toString().split("\\.");
 	    	traverse(result, obj, names, 0);
