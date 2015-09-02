@@ -104,7 +104,7 @@ public class ProcessBolt extends BaseRichBolt
     
     public void cleanup() 
     {
-    	pw.close()
+    	pw.close();
         // System.out.println("------- Counts -------");
         // ArrayList<String> l = new ArrayList<String>(counts.keySet());
         // Collections.sort(l);

@@ -35,7 +35,7 @@ public class SimpleTopology
 
         @Override
         public void execute(Tuple tuple, BasicOutputCollector collector) {
-            System.out.println("LOOK HERE %%%%%%%%%%%%%%%%%%%% : "tuple.toString());
+            System.out.println("LOOK HERE %%%%%%%%%%%%%%%%%%%% : " + tuple.toString());
         }
 
     }
