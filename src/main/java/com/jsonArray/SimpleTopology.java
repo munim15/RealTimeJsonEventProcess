@@ -8,10 +8,11 @@ import storm.kafka.BrokerHosts;
 import storm.kafka.KafkaSpout;
 import storm.kafka.SpoutConfig;
 import storm.kafka.ZkHosts;
+import storm.kafka.StringScheme
 
 import backtype.storm.topology.base.BaseBasicBolt;
-import backtype.storm.topology.base.BasicOutputCollector;
-import backtype.storm.topology.base.OutputFieldsDeclarer;
+import backtype.storm.topology.BasicOutputCollector;
+import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
 
 import java.io.FileInputStream;
